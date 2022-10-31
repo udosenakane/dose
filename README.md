@@ -6,7 +6,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
-
+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
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -69,9 +69,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 "# dose" 
 # dose
 # dose2
-# dose
-# dose
-# dose
 # dose
 # dose
 # dose

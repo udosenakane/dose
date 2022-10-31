@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input, option{
+    padding-left: 10px;
+}
+.fa-size{
+    font-size: 20px !important;
+}
+
+.image-box {
+
+    /* Here's the trick */
+    /* background-color: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)); */
+    /* background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)), url(/img/logo.png); */
+  
+    background-repeat: no-repeat;
+    background-position:  center center;
+    background-size: contain;
+  
+  
+    /* Here's the same styles we applied to our content-div earlier */
+    color: white;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  @media (max-width:600px) {
+    .image-box{
+      min-height: 30vh;
+    }
+  }
+
+  :focus-visible {
+    outline: .5px solid black;
+    /* border-radius: 3px; */
+  }
+/* 
+  [type="text"]:focus,[type="text"]:active, 
+  [type="email"]:focus, 
+  [type="url"]:focus, 
+  [type="password"]:focus, 
+  [type="number"]:focus, 
+  [type="date"]:focus, 
+  [type="datetime-local"]:focus, 
+  [type="month"]:focus, 
+  [type="search"]:focus, 
+  [type="tel"]:focus, 
+  [type="time"]:focus, 
+  [type="week"]:focus, 
+  [multiple]:focus, 
+  textarea:focus, 
+  select:focus{ 
+    border: 1px solid #555 !important;
+    box-shadow: none !important;
+} */
