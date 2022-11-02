@@ -70,7 +70,7 @@
                     </li>
 
                     <li x-data="{ open : false }" class="relative">
-                        <a X-on:click="open = ! open" class="fa-size  text-gray-600" href="#">
+                        <a x-on:click="open = ! open" class="fa-size  text-gray-600" href="#">
                             <span class="fas fa-user"></span>
                         </a>
 

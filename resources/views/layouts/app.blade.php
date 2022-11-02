@@ -25,7 +25,7 @@
         <!-- </div> -->
 
         <footer class="w-full fixed bottom-0 bg-white">
-            {{--storage_path('/app/public/files/')--}}
+            {{-- storage_path('/app/public/files/') --}}
             <p class="text-center py-2 border-t border-gray-400">{{date('Y')}} | {{config('app.name')}}&reg;</p>
         </footer>
 

@@ -16,16 +16,19 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->text('items');
-            $table->string('transaction_id')->nullable();
+            $table->text('payment_details');
             $table->enum('status', ['pending', 'processing', 
                         'on-hold', 'completed', 'cancelled', 
                         'refunded', 'failed', 'trash'])->default('pending');
             $table->string('currency');
             $table->string('cart_hash');
             $table->string('line_total');
-            $table->text('data')->nullable();
+            $table->string('quantity');
+            $table->string('shipping_fee');
+            $table->text('cart_content');
+            $table->string('total');
             $table->text('address');
-            $table->integer('user_id')->nullable();
+            $table->string('user')->nullable();
             $table->timestamps();
         });
     }

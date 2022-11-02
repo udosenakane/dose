@@ -10,7 +10,7 @@
                 <div class="w-1/4">
                     <div  class="border shadow rounded m-3 p-3">
                     <a href="{{route('products.show', $product) }}">
-
+                    
                     <img src="{{ asset('storage/files/'.$product->images[0]['lg']) }}" 
                     alt="{{ $product->slug }}">
                     </a>

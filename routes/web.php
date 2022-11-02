@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CountryConfigController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AdminController;
 use Intervention\Image\ImageManagerStatic as Image;
 
 /*
@@ -33,6 +35,7 @@ Route::get('/countries', function () {
 })->name('countries');
 
 Route::get('/country/{cc}', CountryConfigController::class)->name('country');
+Route::get('/checkout', [CheckoutController::class, 'getCheckout'])->name('checkout');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/cart/add/{id}', [CartController::class, 'store'])->name('cart.store');
 Route::get('/cart/decrement/{id}', [CartController::class, 'decrement'])->name('cart.decrement');
@@ -57,8 +60,10 @@ Route::post('/search', function (Request $request) {
     return response()->json($searches);
 })->name('search');
 
-
- 
 Route::resource('products', ProductController::class);
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('products', ProductController::class);
+
+});
 
 require __DIR__.'/auth.php';

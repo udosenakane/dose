@@ -36,7 +36,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $images = serialize(json_decode($request->images));
+        $images = json_decode($request->images);
         $slug = Str::slug(Str::lower($request->title), '-');
 
         $metadata = [];
@@ -76,7 +76,7 @@ class ProductController extends Controller
             'slug' => $slug,
             'price' => $price,
             'images' => $images,
-            'metadata' => serialize($metadata),
+            'metadata' => $metadata,
         ];
 
 

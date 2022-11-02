@@ -17,9 +17,10 @@
     function country(){
         try {
             $cc = Http::get('https://api.myip.com')['cc'];
-        } catch (\Illuminate\Http\Client\ConnectionException $e){
-            $cc = session()->has('country')? session('country') : 'NG';
-        }
+        } catch (\Illuminate\Http\Client\ConnectionException $e){}
+
+        if(empty($cc))
+            $cc = session()->has('country')? session('country') : '';
         $countries = json_decode(file_get_contents(base_path('countries.json')));
 
         $index = array_search($cc, array_column($countries, 'iso2'));

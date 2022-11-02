@@ -36,7 +36,7 @@ class Product extends Model
             // $product->slug = $product->generateSlug($product->name);
             // $slug = $product->slug;
             
-            $images = unserialize($product->images);
+            $images = $product->images;
 
             $i=0;
             $product_images = [];
@@ -63,7 +63,7 @@ class Product extends Model
             }
             
             // $product->slug = $slug;
-            $product->images = serialize($product_images);
+            $product->images = $product_images;
 
             $product->save();
         });
@@ -96,7 +96,15 @@ class Product extends Model
     {
         return Attribute::make(
             get: fn ($value) => unserialize($value),
-            // set : fn ($value) => json_encode($value),
+            set : fn ($value) => serialize($value),
+        );
+    }
+
+    protected function metadata(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => unserialize($value),
+            set : fn ($value) => serialize($value),
         );
     }
 }

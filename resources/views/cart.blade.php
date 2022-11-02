@@ -19,7 +19,7 @@
                         <div class="w-4/5">
                             <p class="pl-3">
                                 <span class="key">Price:</span> 
-                                <span class="val" x-text="item['item'].name"></span>
+                                <span class="val" x-text="item['item'].price"></span>
                             </p>
 
                             <div class="border-b border-t flex w-full py-1 pl-3">
@@ -52,16 +52,17 @@
 
             <li class="w-full mb-5 border-t border-gray-500">
                 <div class="flex border-b border-gray-400 pb-2 justify-between">
-                    <span>Line Total</span>
+                    <span>Cart Total</span>
                     <span x-text="$store.cart.cart.totalPrice"></span>
                 </div>
-                
             </li>  
 
-            <li>
-                <button class="w-full hover:bg-green-600 mb-5 hover:text-gray-200 text-white rounded bg-green-500 py-3">
+            <li class="text-center">
+                <a href="{{ route('checkout') }}" 
+                class="w-full hover:bg-green-600 block mb-5 hover:text-gray-200 
+                text-white rounded bg-green-500 py-3">
                     Proceed to checkout
-                </button>
+                </a>
             </li>
     </ul>
    

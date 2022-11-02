@@ -1,11 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
 <main>
-   
-    <form x-data="product_create" enctype='multipart/form-data' method="post" 
-    style="max-width:800px" class="border my-8 mx-auto p-3" 
+    <form x-data="productcreate" enctype='multipart/form-data' method="post" 
+    class="border mx-auto p-3" 
     x-on:submit.prevent="handleOnSubmit">
         <div x-data="fileupload" class="relative border rounded">
             <div id="pic-upload panel" style="height:50px" class="cursor-pointer text-center mt-10">
@@ -44,13 +43,13 @@
         <div x-data="{open: false }" class="mt-8">
             <label for="">Category:* </label>
             <input type="text" x-model="category" x-on:click="open = true" 
-            x-ref="cat_input" x-bind:class="open ? 'rounded-bl-none rounded-br-none': '' " 
+             x-bind:class="open ? 'rounded-bl-none rounded-br-none': '' " 
             class="rounded border w-full py-1">
 
             <div x-show="open" x-on:click.outside="open = false" 
             class="flex flex-col border py-4 px-2 rounded-bl rounded-br">
                 <div class="flex">
-                    <input type="text" x-ref="cat_new_add" class="rounded-tl rounded-bl border py-1">
+                    <input type="text" x-model="newcategory" class="rounded-tl rounded-bl border py-1">
                     <button type="button" x-on:click="handleAddCategory"
                     class="text-white bg-green-400 px-4 rounded-tr rounded-br">Add</button>
                 </div>

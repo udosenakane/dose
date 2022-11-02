@@ -1,5 +1,6 @@
 import './bootstrap';
 import cart from './cart';
+import productcreate from './productcreate';
 
 import Alpine from 'alpinejs';
 import axios from 'axios'
@@ -44,6 +45,7 @@ Alpine.data('fileupload', () => ({
 }))
 
 Alpine.store('cart', cart)
+Alpine.data('productcreate', productcreate)
 
 Alpine.data('countries', () => ({
     countries: [],
