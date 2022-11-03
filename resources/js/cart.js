@@ -3,6 +3,9 @@ export default {
 
     init() {
         this.cart = JSON.parse(localStorage.getItem('cart')) || null
+        window.axios.get('locale').then(({data}) => {
+            console.log(data)
+        })
     },
 
     deleteItem(item){

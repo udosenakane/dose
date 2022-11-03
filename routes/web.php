@@ -60,6 +60,11 @@ Route::post('/search', function (Request $request) {
     return response()->json($searches);
 })->name('search');
 
+Route::get('/locale', function (Request $request) {
+    return response()->json(country());
+})->name('locale');
+
+
 Route::resource('products', ProductController::class);
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', ProductController::class);

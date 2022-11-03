@@ -98,3 +98,7 @@
 </div>
 
 @endsection
+
+@section('script')
+<script id="paystack" src="https://js.paystack.co/v1/inline.js"></script> 
+@section('script')

@@ -1,6 +1,7 @@
 import './bootstrap';
 import cart from './cart';
 import productcreate from './productcreate';
+// import payment from './payment';
 
 import Alpine from 'alpinejs';
 import axios from 'axios'
@@ -45,6 +46,7 @@ Alpine.data('fileupload', () => ({
 }))
 
 Alpine.store('cart', cart)
+// Alpine.store('payment', payment)
 Alpine.data('productcreate', productcreate)
 
 Alpine.data('countries', () => ({
